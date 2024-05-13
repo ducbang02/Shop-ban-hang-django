@@ -82,10 +82,30 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mysite',
+        'USER': 'postgres',
+        'PASSWORD': '123456',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
+
+# settings.py
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "mssql",
+#         "NAME": "(default)",
+#         "USER": "sa",
+#         "PASSWORD": "123",
+#         "HOST": "DESKTOP-GEP1IUG",
+#         "PORT": "1433",
+#         "OPTIONS": {
+#             "driver": "SQL Server Native Client 11.0", 
+#             'dsn': 'Mysite_Django2',
+#         },
+#     },
+# }
 
 
 # Password validation
@@ -145,5 +165,8 @@ CKEDITOR_CONFIGS = {
         'toolbar': None,
     },
 }
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ###################################
